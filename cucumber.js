@@ -6,7 +6,8 @@ module.exports = {
     ],
     requireModule: ["ts-node/register"],
     format: [
-      "@cucumber/pretty-formatter",
+      "progress",
+      "summary",
       "json:test-results/cucumber-report.json"
     ],
     paths: [
