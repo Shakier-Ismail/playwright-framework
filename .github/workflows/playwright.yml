@@ -5,9 +5,6 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   test:
 
@@ -20,7 +17,7 @@ jobs:
 
     steps:
 
-      - name: Checkout Repo
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Setup Node
@@ -32,7 +29,17 @@ jobs:
         run: npm install
 
       - name: Install Playwright Browsers
-        run: npx playwright install
+        run: npx playwright install --with-deps
 
       - name: Run Tests
-        run: npx cucumber-js
+        run: npm run test
+
+      - name: Generate HTML Report
+        run: npm run report
+
+      - name: Upload Cucumber Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-html-report
+          path: test-results/report

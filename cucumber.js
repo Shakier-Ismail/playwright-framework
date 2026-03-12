@@ -6,10 +6,11 @@ module.exports = {
     ],
     requireModule: ["ts-node/register"],
     format: [
-      "progress",
-      "summary",
       "json:test-results/cucumber-report.json"
     ],
+    formatOptions: {
+      snippetInterface: "async-await"
+    },
     paths: [
       "features/**/*.feature"
     ]

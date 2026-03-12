@@ -1,27 +1,24 @@
 {
   "name": "playwright-bdd",
   "version": "1.0.0",
-  "description": "Playwright + Cucumber BDD framework",
-  "main": "index.js",
+  "description": "Playwright Cucumber automation framework",
   "scripts": {
-    "test": "cucumber-js --require-module ts-node/register --require support/**/*.ts --require step-definitions/**/*.ts features/**/*.feature",
-    "test:headed": "PWDEBUG=1 npm test",
-    "debug": "node debug/debug.js",
-    "report": "npx playwright show-report"
+    "test": "cucumber-js",
+    "report": "node generate-report.js",
+    "test:report": "npm run test && npm run report"
   },
   "keywords": [],
-  "author": "",
+  "author": "Shakier Ismail",
   "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "@cucumber/cucumber": "^10.0.0",
-    "dotenv": "^16.3.0",
-    "playwright": "^1.40.0"
+    "dotenv": "^16.4.5",
+    "playwright": "^1.42.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.58.2",
-    "@types/node": "^20.8.0",
-    "ts-node": "^10.9.0",
-    "typescript": "^5.2.2"
+    "@cucumber/cucumber": "^10.8.0",
+    "@playwright/test": "^1.42.0",
+    "multiple-cucumber-html-reporter": "^3.5.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.0"
   }
 }
