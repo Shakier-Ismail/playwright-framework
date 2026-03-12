@@ -1,8 +1,8 @@
 # Playwright BDD Automation Framework
 
-This project is a **Playwright + Cucumber (BDD) automation framework written in TypeScript**.
+This repository contains a **Playwright + Cucumber (BDD) test automation framework written in TypeScript**.
 
-It supports:
+The framework supports:
 
 - Playwright browser automation
 - Cucumber BDD feature files
@@ -10,6 +10,9 @@ It supports:
 - HTML test reporting
 - GitHub Actions CI pipeline
 - Secure environment variables using GitHub Secrets
+
+Repository:  
+https://github.com/Shakier-Ismail/playwright-framework
 
 ---
 
@@ -27,7 +30,7 @@ It supports:
 # Project Structure
 
 ```
-playwright-bdd
+playwright-framework
 │
 ├── features
 │   └── login.feature
@@ -60,9 +63,9 @@ playwright-bdd
 
 Before running the framework you must install:
 
-## Node.js
+## 1. Node.js
 
-Download and install Node.js:
+Download Node.js:
 
 https://nodejs.org/
 
@@ -81,13 +84,13 @@ npm -v
 
 ---
 
-## Git
+## 2. Git
 
-Download and install Git:
+Download Git:
 
 https://git-scm.com/downloads
 
-Verify installation:
+Verify:
 
 ```
 git --version
@@ -95,21 +98,21 @@ git --version
 
 ---
 
-# Setup Project
+# Setup the Project
 
 Clone the repository:
 
 ```
-git clone https://github.com/<your-username>/<repo-name>.git
+git clone https://github.com/Shakier-Ismail/playwright-framework.git
 ```
 
-Navigate to the project folder:
+Navigate to the project directory:
 
 ```
-cd playwright-bdd
+cd playwright-framework
 ```
 
-Install project dependencies:
+Install dependencies:
 
 ```
 npm install
@@ -135,7 +138,7 @@ USERNAME=yourusername
 PASSWORD=yourpassword
 ```
 
-Tests read values using:
+The tests access credentials using:
 
 ```
 process.env.USERNAME
@@ -168,34 +171,34 @@ Open the report in your browser:
 test-results/report/index.html
 ```
 
-The report shows:
+The report includes:
 
 - Features
 - Scenarios
 - Steps
+- Pass / Fail results
 - Execution time
-- Pass / Fail status
 
 ---
 
 # GitHub Actions CI
 
-The project includes a GitHub Actions workflow that runs tests automatically when code is pushed.
+This project includes a **GitHub Actions pipeline** that automatically runs tests on every push.
 
-Workflow file:
+Workflow location:
 
 ```
 .github/workflows/playwright.yml
 ```
 
-Pipeline steps:
+Pipeline process:
 
 1. Checkout repository
 2. Install dependencies
 3. Install Playwright browsers
-4. Run tests
-5. Generate HTML report
-6. Upload report artifact
+4. Run Cucumber tests
+5. Generate HTML test report
+6. Upload report as artifact
 
 ---
 
@@ -206,7 +209,7 @@ To run tests in GitHub CI you must configure repository secrets.
 Go to:
 
 ```
-Repository → Settings → Secrets → Actions
+Repository → Settings → Secrets and Variables → Actions
 ```
 
 Add the following secrets:
@@ -217,13 +220,13 @@ USERNAME
 PASSWORD
 ```
 
-These values will be injected into the CI pipeline securely.
+These are securely injected into the pipeline.
 
 ---
 
 # Viewing Test Reports in GitHub
 
-After the pipeline runs:
+After a pipeline run:
 
 Go to:
 
@@ -231,7 +234,7 @@ Go to:
 GitHub → Actions → Workflow Run
 ```
 
-Download artifact:
+Scroll to **Artifacts** and download:
 
 ```
 cucumber-html-report
@@ -243,7 +246,7 @@ Open:
 index.html
 ```
 
-This will display the full test execution report.
+to view the test report.
 
 ---
 
@@ -267,7 +270,7 @@ Generate HTML report:
 npm run report
 ```
 
-Run tests and generate report:
+Run tests + generate report:
 
 ```
 npm run test:report
@@ -277,7 +280,7 @@ npm run test:report
 
 # Recommended `.env.example`
 
-Add this file to the repository so others know which variables are required:
+Add this file to your repository so other users know which environment variables are required:
 
 ```
 BASE_URL=
@@ -289,12 +292,12 @@ PASSWORD=
 
 # Future Improvements
 
-Possible enhancements:
+Potential enhancements:
 
 - Playwright trace viewer integration
 - Screenshot capture on test failure
 - Parallel test execution
-- Environment configuration support
+- Multiple environment support
 - Docker test execution
 
 ---
