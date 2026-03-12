@@ -6,8 +6,7 @@ module.exports = {
     ],
     requireModule: ["ts-node/register"],
     format: [
-      "progress",
-      "html:test-results/report.html"
+      "pretty"
     ],
     paths: [
       "features/**/*.feature"
